@@ -200,6 +200,8 @@ export type TeamMember = {
   initials: string;
   role: string;
   location: string;
+  /** Optional related site, shown under the location. */
+  link?: { label: string; href: string };
   bio: string;
   /** Path to a real headshot in /public, e.g. "/team/chad-choquette.jpg". */
   photo?: string;
@@ -222,7 +224,8 @@ export const team: TeamMember[] = [
   {
     name: "James Oli",
     initials: "JO",
-    role: "Service Maintainer & AI Engineer",
+    role: "Project Manager & Service Maintainer",
+    link: { label: "runstratus.com", href: "https://runstratus.com" },
     location: "Bamban, Tarlac, Philippines",
     bio: "Focused on maintaining technology services, developing AI-powered solutions, and supporting reliable, intelligent software systems.",
     photo: "/team/james-oli.jpg",

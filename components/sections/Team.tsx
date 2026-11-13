@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { Globe, MapPin } from "lucide-react";
+import { ArrowUpRight, Globe, MapPin } from "lucide-react";
 import { site, team, type TeamMember } from "@/lib/content";
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
@@ -68,6 +68,18 @@ function MemberCard({ member, index }: { member: TeamMember; index: number }) {
               <MapPin aria-hidden className="mt-0.5 size-4 shrink-0 text-white/40" />
               <span>{member.location}</span>
             </p>
+            {member.link && (
+              <a
+                href={member.link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-2 inline-flex items-center gap-1.5 text-sm text-white/60 transition-colors hover:text-white"
+              >
+                <Globe aria-hidden className="size-4 shrink-0 text-white/40" />
+                {member.link.label}
+                <ArrowUpRight aria-hidden className="size-3.5 text-white/40" />
+              </a>
+            )}
           </div>
         </div>
 
