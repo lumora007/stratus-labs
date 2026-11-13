@@ -28,8 +28,13 @@ export const site = {
   tagline: "Engineered for what's next.",
   description:
     "Stratus Labs LLC is an AI-first software engineering company. We design and build AI agents, automation, SaaS products, and custom web and mobile applications for ambitious businesses.",
-  // Set NEXT_PUBLIC_SITE_URL in production so metadata, sitemap, and robots use the real domain.
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
+  // Set NEXT_PUBLIC_SITE_URL to the custom domain once it's live. On Vercel it
+  // falls back to the project's production URL; locally, to localhost.
+  url:
+    process.env.NEXT_PUBLIC_SITE_URL ??
+    (process.env.VERCEL_PROJECT_PRODUCTION_URL
+      ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+      : "http://localhost:3000"),
   email: "contact@stratuslabs.pro",
   address: {
     street: "205 W Main Street",
