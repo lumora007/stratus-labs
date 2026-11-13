@@ -39,7 +39,7 @@ export function Navbar() {
   useEffect(() => {
     if (!open) return;
     const onKey = (e: KeyboardEvent) => e.key === "Escape" && setOpen(false);
-    const onResize = () => window.innerWidth >= 768 && setOpen(false);
+    const onResize = () => window.innerWidth >= 1024 && setOpen(false);
     document.body.style.overflow = "hidden";
     window.addEventListener("keydown", onKey);
     window.addEventListener("resize", onResize);
@@ -62,7 +62,7 @@ export function Navbar() {
           <Logo />
         </a>
 
-        <nav aria-label="Primary" className="hidden md:block">
+        <nav aria-label="Primary" className="hidden lg:block">
           <ul className="flex items-center gap-0.5 rounded-full border border-white/[0.07] bg-white/[0.02] p-1 backdrop-blur-md">
             {navLinks.map((link) => {
               const id = link.href.slice(1);
@@ -93,7 +93,7 @@ export function Navbar() {
         </nav>
 
         <div className="flex items-center gap-2">
-          <div className="hidden md:block">
+          <div className="hidden lg:block">
             <Button href="#contact" size="sm" arrow>
               Let&apos;s Talk
             </Button>
@@ -104,7 +104,7 @@ export function Navbar() {
             aria-expanded={open}
             aria-controls="mobile-menu"
             aria-label={open ? "Close menu" : "Open menu"}
-            className="grid size-10 place-items-center rounded-full border border-white/10 bg-white/[0.03] text-white md:hidden"
+            className="grid size-10 place-items-center rounded-full border border-white/10 bg-white/[0.03] text-white lg:hidden"
           >
             {open ? <X className="size-5" /> : <Menu className="size-5" />}
           </button>
@@ -119,7 +119,7 @@ export function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.25 }}
-            className="fixed inset-x-0 top-16 bottom-0 overflow-y-auto border-t border-white/[0.06] bg-ink/95 backdrop-blur-xl md:hidden"
+            className="fixed inset-x-0 top-16 bottom-0 overflow-y-auto border-t border-white/[0.06] bg-ink/95 backdrop-blur-xl lg:hidden"
           >
             <nav aria-label="Mobile" className="px-4 pt-6 pb-10">
               <ul className="space-y-1">

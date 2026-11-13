@@ -40,11 +40,6 @@ export function Footer() {
                   </a>
                 </li>
               ))}
-              <li>
-                <a href="#team" className={linkCls}>
-                  Team
-                </a>
-              </li>
             </ul>
           </Column>
 

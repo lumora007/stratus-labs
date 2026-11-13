@@ -24,7 +24,7 @@ npm start
 ## Before launch
 
 - **Stats**: the four figures in `stats` are placeholders and show a "Placeholder figures" badge on the page. Replace them with verified numbers or remove the strip.
-- **Team photos**: add real headshots to `public/team/` and set `photo` on each member (e.g. `"/team/chad-choquette.jpg"`). Until then a monogram avatar is shown.
+- **Team photos** live in `public/team/` and are set via `photo` on each member; `photoCrop` zooms toward the face. A member without `photo` gets a monogram avatar.
 - **Social links**: add real profile URLs to `site.socials`. The footer only shows that block when the list is not empty.
 - **Domain**: set `NEXT_PUBLIC_SITE_URL` (e.g. `https://yourdomain.com`) so canonical URLs, the sitemap and robots.txt point to the real site.
 - **Demo projects**: the three Featured Solutions are labeled as demo projects. Swap in real case studies when available.

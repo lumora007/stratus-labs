@@ -19,7 +19,18 @@ function Avatar({ member }: { member: TeamMember }) {
       <div className="relative size-full rounded-[1.6rem] p-px" style={{ background: `linear-gradient(135deg, ${from}, ${to})` }}>
         <div className="relative size-full overflow-hidden rounded-[calc(1.6rem-1px)] bg-ink">
           {member.photo ? (
-            <Image src={member.photo} alt={`Portrait of ${member.name}`} fill sizes="112px" className="object-cover" />
+            <div
+              className="absolute inset-0"
+              style={member.photoCrop ? { transform: `scale(${member.photoCrop.scale})`, transformOrigin: member.photoCrop.origin } : undefined}
+            >
+              <Image
+                src={member.photo}
+                alt={`Portrait of ${member.name}`}
+                fill
+                sizes="(min-width: 640px) 112px, 96px"
+                className="object-cover transition-transform duration-700 ease-out-expo group-hover:scale-[1.05]"
+              />
+            </div>
           ) : (
             <div className="grid size-full place-items-center bg-grid-sm" role="img" aria-label={`${member.name} (photo coming soon)`}>
               <span

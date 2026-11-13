@@ -53,6 +53,7 @@ export const navLinks = [
   { label: "Services", href: "#services" },
   { label: "Solutions", href: "#solutions" },
   { label: "About", href: "#about" },
+  { label: "Team", href: "#team" },
   { label: "Contact", href: "#contact" },
 ] as const;
 
@@ -202,6 +203,8 @@ export type TeamMember = {
   bio: string;
   /** Path to a real headshot in /public, e.g. "/team/chad-choquette.jpg". */
   photo?: string;
+  /** Zoom into the face: scale factor and transform origin (CSS). */
+  photoCrop?: { scale: number; origin: string };
   accent: [string, string];
 };
 
@@ -212,6 +215,8 @@ export const team: TeamMember[] = [
     role: "Founder & Engineering Lead",
     location: "Taylors, South Carolina, United States",
     bio: "Leading engineering strategy and product development at Stratus Labs LLC, focusing on building scalable software solutions, AI-powered systems, and innovative technology products.",
+    photo: "/team/chad-choquette.jpg",
+    photoCrop: { scale: 1.45, origin: "50% 20%" },
     accent: ["#4f7cff", "#8b5cf6"],
   },
   {
@@ -220,6 +225,8 @@ export const team: TeamMember[] = [
     role: "Service Maintainer & AI Engineer",
     location: "Bamban, Tarlac, Philippines",
     bio: "Focused on maintaining technology services, developing AI-powered solutions, and supporting reliable, intelligent software systems.",
+    photo: "/team/james-oli.jpg",
+    photoCrop: { scale: 1.2, origin: "50% 38%" },
     accent: ["#22d3ee", "#4f7cff"],
   },
 ];
